@@ -5,6 +5,18 @@ import argparse
 from train_and_test import get_all_data, train_and_validate, train_path, test_path
 from settings import model_params
 
+
+def main():
+    """
+    Runs an experiment with the model chosen as a CLI argument, with parameters specified in settings.py.
+    Basically a wrapper for the train_and_validate function from train_and_test.py
+
+    Example usage:
+        ./eval_model svm -n
+        ./eval_model rf
+
+    """
+
 if __name__ == '__main__':
     # X_train, Y_train, X_test, Y_test, X_train_norm, Y_train_norm, X_test_norm, Y_test_norm = get_all_data(train_path,
     #                                                                                                      test_path)
@@ -13,7 +25,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('algorithm', help='Name of the algorithm to run. One of: naive-bayes,\
-     naive-bayes-g, naive-bayes-m, naive-bayes-b, decision-tree, knn, svm, rf, et')
+     naive-bayes-g, naive-bayes-m, naive-bayes-b, decision-tree, knn, svm, rf, et, logreg')
 
     parser.add_argument('-n', '--normalize', help='Normalize data', action='store_true')
     # parser.add_argument('-s', '--settings', help='Use model parameters stored in settings.py', action='store_true')

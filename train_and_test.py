@@ -6,6 +6,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier, ExtraTreesClassifier
+from sklearn.linear_model import LogisticRegression
 # import matplotlib.pyplot as plt
 
 from data_preprocessing import prepare_data, normalize_multiple_columns, \
@@ -158,6 +159,7 @@ def train_and_validate(algorithm, X_train, Y_train, X_test, Y_test, suffix='', *
                  'svm': LinearSVC,
                  'rf': RandomForestClassifier,
                  'et': ExtraTreesClassifier,
+                 'logreg': LogisticRegression,
                  }
 
     assert algorithm in algo_dict
