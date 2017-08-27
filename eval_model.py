@@ -1,4 +1,4 @@
-#!/bin/python3.5
+#!/bin/python3
 
 import argparse
 
@@ -15,20 +15,18 @@ def main():
         ./eval_model svm -n
         ./eval_model rf
 
+    Usage suggestions:
+        -- Remember to use -n for svm.
+           Actually, most models benefit from it, maybe except for decision tree-based models and naive-bayes models.
+        -- naive-bayes-m does not accept -n at all.
+        -- Change settings.py to set your own parameters.
+
     """
-
-if __name__ == '__main__':
-    # X_train, Y_train, X_test, Y_test, X_train_norm, Y_train_norm, X_test_norm, Y_test_norm = get_all_data(train_path,
-    #                                                                                                      test_path)
-    # supported algorithms:
-    # train_and_validate()
-
     parser = argparse.ArgumentParser()
     parser.add_argument('algorithm', help='Name of the algorithm to run. One of: naive-bayes,\
      naive-bayes-g, naive-bayes-m, naive-bayes-b, decision-tree, knn, svm, rf, et, logreg')
 
     parser.add_argument('-n', '--normalize', help='Normalize data', action='store_true')
-    # parser.add_argument('-s', '--settings', help='Use model parameters stored in settings.py', action='store_true')
     parser.add_argument('-v', '--verbose', help='Give more verbose output', action='store_true')
 
     args = parser.parse_args()
@@ -44,3 +42,6 @@ if __name__ == '__main__':
         print('Model parameters:', params)
 
     train_and_validate(args.algorithm, X_train, Y_train, X_test, Y_test, suffix='', **params)
+
+if __name__ == '__main__':
+    main()
