@@ -11,4 +11,5 @@ model_params = {
     'et': {'criterion': 'gini', 'n_estimators': 200, 'min_impurity_decrease': 0.0,
            'min_samples_split': 8, 'min_samples_leaf': 2},
     'logreg': {'fit_intercept': True, 'penalty': 'l2', 'dual': False},
+    'xgb': {}
 }

@@ -189,7 +189,7 @@ def prepare_data(path):
 
 
 def normalize_column(data, column, inplace=False):
-    """PROBABLY BROKEN
+    """
     Normalizes the chosen column to 0 mean and 1 variance.
     
     Args:
@@ -217,7 +217,7 @@ def normalize_column(data, column, inplace=False):
 
 
 def normalize_multiple_columns(data, columns, inplace=False):
-    """PROBABLY BROKEN
+    """
     Convenience function for normalizing several columns.
     
     Args:
